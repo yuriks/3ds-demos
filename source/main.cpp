@@ -21,8 +21,10 @@ int main(int argc, char** argv)
 			break;
 
 		switch (selection) {
-			case 0: process_dumper();
+			case 0: process_dumper(); break;
 		}
+		fprintf(stdout, "\nPress any key to return to menu.\n");
+		wait_input();
 	}
 
 	gfxExit();

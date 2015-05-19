@@ -10,3 +10,4 @@
 #define ARRAY_LEN(arr) (sizeof(arr) / sizeof(*(arr)))
 
 void printMemoryInfo(const MemInfo* mem_info);
+u32 wait_input();

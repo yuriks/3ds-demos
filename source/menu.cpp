@@ -2,6 +2,7 @@
 #include <stdio.h>
 
 #include "menu.h"
+#include "util.h"
 
 void draw_menu(const char* choices[], int num_choices, int selected) {
 	for (int i = 0; i < num_choices; ++i) {
@@ -35,11 +36,7 @@ int do_simple_menu(const char* header, const char* choices[], int num_choices) {
 		fprintf(stdout, "%s", header);
 		draw_menu(choices, num_choices, selected);
 
-		u32 keys;
-		do {
-			hidScanInput();
-			keys = hidKeysDown();
-		} while (keys == 0);
+		u32 keys = wait_input();
 		interact_menu(keys, num_choices, &selected);
 		if (keys & KEY_A)
 			return selected;

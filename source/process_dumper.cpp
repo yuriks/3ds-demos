@@ -77,7 +77,7 @@ cleanup:
 	return ret;
 }
 
-int process_dumper() {
+void process_dumper() {
 	u32 target_pid = 0;
 
 	u32 self_pid = 0;

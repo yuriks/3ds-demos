@@ -24,3 +24,13 @@ void printMemoryInfo(const MemInfo* mem_info) {
 			mem_info->base_addr, mem_info->base_addr + mem_info->size,
 			mem_info->perm, r,w,x, state_str, mem_info->state, mem_info->size);
 }
+
+u32 wait_input() {
+	while (true) {
+		hidScanInput();
+		u32 keys = hidKeysDown();
+		if (keys != 0)
+			return keys;
+		gspWaitForVBlank();
+	}
+}
