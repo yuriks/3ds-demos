@@ -9,5 +9,10 @@
 
 #define ARRAY_LEN(arr) (sizeof(arr) / sizeof(*(arr)))
 
+// Console colors
+#define C_RESET "\e[0m"
+#define C_RED "\e[31m"
+#define C_GREEN "\e[32m"
+
 void printMemoryInfo(const MemInfo* mem_info);
 u32 wait_input();

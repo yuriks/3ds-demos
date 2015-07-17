@@ -4,10 +4,12 @@
 #include "menu.h"
 #include "util.h"
 
-int process_dumper();
+void process_dumper();
+void address_space_info();
 
 static const char* module_names[] = {
 	"Process Dumper",
+	"Address Space Info",
 };
 
 int main(int argc, char** argv)
@@ -22,6 +24,7 @@ int main(int argc, char** argv)
 
 		switch (selection) {
 			case 0: process_dumper(); break;
+			case 1: address_space_info(); break;
 		}
 		fprintf(stdout, "\nPress any key to return to menu.\n");
 		wait_input();

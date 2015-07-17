@@ -19,10 +19,10 @@ void printMemoryInfo(const MemInfo* mem_info) {
 	}
 
 	log(
-			"    addr: %08lX end: %08lX\n"
-			"    perm: %lX(%c%c%c) state: %s(%lX) size: %lX\n",
-			mem_info->base_addr, mem_info->base_addr + mem_info->size,
-			mem_info->perm, r,w,x, state_str, mem_info->state, mem_info->size);
+			"    addr: %08lX - %08lX size: %8lX\n"
+			"    perm: %lX(%c%c%c) state: %s(%lu)\n",
+			mem_info->base_addr, mem_info->base_addr + mem_info->size, mem_info->size,
+			mem_info->perm, r,w,x, state_str, mem_info->state);
 }
 
 u32 wait_input() {
